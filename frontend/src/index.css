@@ -107,6 +107,24 @@ button {
   padding: 0.75rem;
 }
 
+.auth-footer {
+  display: flex;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.auth-footer a {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
 .page-loading {
   margin: auto;
   color: #475569;

@@ -19,6 +19,10 @@ export interface LoginPayload {
   password: string;
 }
 
+export interface RegisterPayload extends LoginPayload {
+  displayName?: string;
+}
+
 export interface RefreshPayload {
   refreshToken: string;
 }
@@ -26,6 +30,11 @@ export interface RefreshPayload {
 export const authApi = {
   async login(payload: LoginPayload): Promise<AuthResponse> {
     const { data } = await rawClient.post<AuthResponse>('/auth/login', payload);
+    return data;
+  },
+
+  async register(payload: RegisterPayload): Promise<AuthResponse> {
+    const { data } = await rawClient.post<AuthResponse>('/auth/register', payload);
     return data;
   },
 

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useLoginMutation } from '../hooks/useLoginMutation';
 import { getErrorMessage } from '../utils/error';
 import { useAuth } from '../hooks/useAuth';
@@ -74,6 +74,11 @@ export function LoginPage() {
         <button type="submit" disabled={loginMutation.isPending}>
           {loginMutation.isPending ? 'Signing in…' : 'Sign in'}
         </button>
+
+        <div className="auth-footer">
+          <span>Need an account?</span>
+          <Link to="/register">Create one</Link>
+        </div>
       </form>
     </div>
   );
